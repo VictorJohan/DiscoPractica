@@ -1,0 +1,64 @@
+﻿<Window x:Class="RegistroDisco.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RegistroDisco"
+        mc:Ignorable="d"
+        Title="Registro Disco" Height="405" Width="346" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10">
+            
+            <Label Content="Id Disco" FontWeight="Bold"/>
+            <StackPanel Orientation="Horizontal" Margin="5,0,5,11" Width="116" HorizontalAlignment="Left">
+                
+                <TextBox Name="idDiscoTextBox" Width="30" Height="20" Text="{Binding IdDisco}"/>
+                <Button Name="buscarButton" Width="60" Height="20" Margin="15,0,0,0" Click="buscarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/search.png" />
+                        <Label Content="Buscar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+                
+            </StackPanel>
+
+            <Label Content="Nombre del Disco" FontWeight="Bold"/>
+            <TextBox Name="nombreDiscoTextBox" Width="150" Text="{Binding Nombre}" HorizontalAlignment="Left" Margin="5,0,5,11"/>
+
+            <Label Content="Cantidad de Canciones" FontWeight="Bold"/>
+            <TextBox Name="catCancionesTextBox" Width="150" Text="{Binding CantidadCanciones}" HorizontalAlignment="Left" Margin="5,0,5,11"/>
+
+            <Label Content="Fecha Lanzamiento" FontWeight="Bold"/>
+            <DatePicker Name="fechaLanzamientoTextBox" Width="150" SelectedDate ="{Binding FechaLanzamiento}" HorizontalAlignment="Left" Margin="5,0,5,11"/>
+
+            <Label Content="Nombre del Artista" FontWeight="Bold"/>
+            <TextBox Name="nombreArtistaTextBox" Width="150" Text="{Binding Artista}" HorizontalAlignment="Left" Margin="5,0,5,40"/>
+
+            <StackPanel Orientation="Horizontal" Width="221">
+
+                <Button Name="nuevoButton" Width="60" Height="20" Click="nuevoButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/grabacion-de-cd.png" />
+                        <Label Content="Nuevo" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="guardarButton" Width="67" Height="20" Margin="10,0,0,0" Click="guardarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/save.png" />
+                        <Label Content="Guardar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+                <Button Name="eliminarButton" Width="67" Height="20" Margin="10,0,0,0" Click="eliminarButton_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/delete.png" />
+                        <Label Content="Eliminar" FontWeight="Bold" Padding="-1"/>
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>
